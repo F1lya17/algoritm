@@ -37,4 +37,5 @@ int main() {
     cout << iA << " " << iB;
     delete[] A;
     delete[] B;
+    return 0;
 }
