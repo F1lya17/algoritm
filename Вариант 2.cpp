@@ -33,4 +33,5 @@ int main()
         Time += fine;
     }
     cout << Time;
+    return 0;
 }
