@@ -52,6 +52,7 @@ int main() {
         }
         cout << ans << " ";
     }
-	delete[] A;
+    delete[] A;
     delete[] B;
+    return 0;
 }
