@@ -5,8 +5,8 @@ https://contest.yandex.ru/contest/36361/problems/3/
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using namespace std;
 
+using namespace std;
 
 void topological_sort(int u, vector<int> &top_sort, vector<bool> &visited, vector<vector<int> > &g) {
     visited[u] = true;
