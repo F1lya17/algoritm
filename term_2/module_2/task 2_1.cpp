@@ -1,5 +1,5 @@
 /*Дан невзвешенный неориентированный граф. Найдите цикл минимальной длины
-https://contest.yandex.ru/contest/36361/problems/?success=68013458#194179/2017_02_12/cFqxeu0Po1
+https://contest.yandex.ru/contest/36361/problems/2.1/
 68013458*/
 
 #include <iostream>
