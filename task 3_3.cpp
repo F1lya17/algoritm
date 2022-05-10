@@ -8,15 +8,14 @@ https://contest.yandex.ru/contest/35212/problems/3_3/
 #include <algorithm>
 using namespace std;
 
-int main()
-{
+int main() {
     int N;
     cin >> N;
     vector <int> coordinates(N);
     for (int i = 0; i < N; i++) {
         cin >> coordinates[i];   
     }
-	sort(coordinates.begin(), coordinates.end());
+    sort(coordinates.begin(), coordinates.end());
     vector <int> dist(N + 1);
     dist[1] = 1e6;
     for (int i = 2; i <= N; i++) {
