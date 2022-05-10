@@ -1,7 +1,7 @@
 /*Дано N кубиков. Требуется определить каким количеством способов можно выстроить из этих кубиков пирамиду. 
 Каждый вышележащий слой пирамиды должен быть строго меньше нижележащего.
 https://contest.yandex.ru/contest/35212/problems/4_1/
-65877605*/
+68280592*/
 
 #include <iostream>
 #include <vector>
@@ -30,9 +30,9 @@ int main() {
         for (int j = 1; j < n; j++) {
             if (i == j) {
                 dp[i][j] = dp[i][j - 1] + 1;
+            }
             else if (i > j) {
                 dp[i][j] = dp[i - j - 1][j - 1] + dp[i][j - 1];
-
             }
             else {
                 dp[i][j] = dp[i][j - 1];
@@ -42,3 +42,4 @@ int main() {
     cout << dp[n - 1][n - 1];
     return 0;
 }
+
