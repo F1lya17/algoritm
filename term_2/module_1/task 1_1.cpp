@@ -29,7 +29,7 @@ class HashTable {
 private:
 	int cells;
 	double added = 0;
-	vector<pair <string, int>> table;
+	vector<pair<string, int> > table;
 	double LoadFactor(){
 		return added / cells;
 	}
@@ -38,7 +38,7 @@ public:
 		cells = 8;
 		table.resize(cells);
 	}
-	bool Add(string s){
+	bool Insert(string s){
 		int hash = Hash(s, cells);
 		int j = 1;
 		while(table[hash].first != "" || table[hash].second == 1) {
@@ -52,11 +52,11 @@ public:
 		table[hash].first = s;
 		added++;
 		if (LoadFactor() > 0.75) {
-			recalc();
+			Resize();
 		}
 		return true;
 	}
-	void recalc() {
+	void Resize() {
 		cells *= 2;
 		vector<string> allelems;
 		for (auto elem : table) {
@@ -66,9 +66,9 @@ public:
 		}
 		table.clear();
 		table.resize(cells);
-    	added = 0;
+    		added = 0;
 		for (auto elem : allelems) {
-			Add(elem);
+			Insert(elem);
 		}
 		added = allelems.size();
 	}
@@ -108,7 +108,7 @@ int main() {
 	string str;
 	while (cin >> command >> str) {
 		if (command == '+') {
-			cout << (htvector.Add(str) ? "OK" : "FAIL") << endl;
+			cout << (htvector.Insert(str) ? "OK" : "FAIL") << endl;
 		}
 		else if (command == '?') {
 			cout << (htvector.Find(str) ? "OK" : "FAIL") << endl;
